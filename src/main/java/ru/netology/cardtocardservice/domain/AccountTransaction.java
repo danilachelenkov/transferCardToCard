@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class AccountTransaction extends TransferInfo {
     private ConfirmType commitCode;
+    private String operationId;
     private String transactionProcessedTime;
 
     public AccountTransaction(TransferInfo transferInfo) {
@@ -14,6 +15,7 @@ public class AccountTransaction extends TransferInfo {
         this.setCardToNumber(transferInfo.getCardToNumber());
         this.setTransactionRegistrationTime(transferInfo.getTransactionRegistrationTime());
         this.setAmount(transferInfo.getAmount());
+        this.setCommissionAmount(transferInfo.getCommissionAmount());
     }
 }
 

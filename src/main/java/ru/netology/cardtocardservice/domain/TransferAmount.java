@@ -14,7 +14,7 @@ public class TransferAmount {
     @NotBlank
     @Pattern(
             regexp = "RUB",
-            message = "Значение вида валюты для перевода только RUB"
+            message = "Значение вида валюты для перевода может быть только RUB"
     )
     private String currency;
 }

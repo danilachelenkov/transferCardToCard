@@ -1,5 +1,6 @@
 package ru.netology.cardtocardservice.domain;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
@@ -36,6 +37,7 @@ public class TransferInfo {
     )
     private String cardToNumber;
 
+    @Valid
     private TransferAmount amount;
 
     private String transactionRegistrationTime;

@@ -31,6 +31,7 @@ public class TransferControler {
     @PostMapping("/confirmOperation")
     public ResponseEntity<?> commit(@Valid @RequestBody OperationInfo operationInfo) {
         System.out.println(operationInfo);
-        return new ResponseEntity<>(new TransactionInfo(transferService.doCommit(operationInfo)), HttpStatus.OK);
+        return new ResponseEntity<>(new TransactionInfo(transferService.doComfirm(operationInfo)), HttpStatus.OK);
     }
+
 }
