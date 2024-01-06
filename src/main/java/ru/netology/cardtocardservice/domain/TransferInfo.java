@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
 import lombok.Data;
+import ru.netology.cardtocardservice.annotation.DateValidType;
+import ru.netology.cardtocardservice.annotation.ValidityDatePeriod;
 
 @Data
 public class TransferInfo {
@@ -20,9 +22,9 @@ public class TransferInfo {
             regexp = "(0[1-9]|1[012])[0-9]{2}",
             message = "Значение срока действия карты клиента должен быть передан в формате MMYY"
     )
+    @ValidityDatePeriod(message = "Дата действия карты меньше текущей даты. Операция невозможна", typeValid = DateValidType.MMYY)
     private String cardFromValidTill;
 
-    //todo можно написать аннотацию, которая бы проверяла валидность карты по текущей дате
     @NotBlank
     @Pattern(
             regexp = "[0-9]{3}",

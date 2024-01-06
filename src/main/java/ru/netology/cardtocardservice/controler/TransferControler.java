@@ -1,6 +1,7 @@
 package ru.netology.cardtocardservice.controler;
 
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -8,11 +9,15 @@ import org.springframework.web.bind.annotation.*;
 import ru.netology.cardtocardservice.domain.OperationInfo;
 import ru.netology.cardtocardservice.domain.TransactionInfo;
 import ru.netology.cardtocardservice.domain.TransferInfo;
+import ru.netology.cardtocardservice.processor.ValidationProcessor;
 import ru.netology.cardtocardservice.service.TransferService;
+
+import java.text.ParseException;
 
 //todo обеспечить логирование
 @Validated
 //https://www.bezkoder.com/spring-boot-validate-request-body/
+@Slf4j
 @RestController
 @RequestMapping("/")
 public class TransferControler {
@@ -23,14 +28,15 @@ public class TransferControler {
     }
 
     @PostMapping("/transfer")
-    public ResponseEntity<?> doTransfer(@Valid @RequestBody TransferInfo transferInfo) {
-        System.out.println(transferInfo);
+    public ResponseEntity<?> doTransfer(@Valid @RequestBody TransferInfo transferInfo) throws IllegalAccessException, ParseException {
+        ValidationProcessor.validateTransferInfo(transferInfo);
+        log.debug(transferInfo.toString());
         return new ResponseEntity<>(new TransactionInfo(transferService.doTransaction(transferInfo)), HttpStatus.OK);
     }
 
     @PostMapping("/confirmOperation")
     public ResponseEntity<?> commit(@Valid @RequestBody OperationInfo operationInfo) {
-        System.out.println(operationInfo);
+        log.debug(operationInfo.toString());
         return new ResponseEntity<>(new TransactionInfo(transferService.doComfirm(operationInfo)), HttpStatus.OK);
     }
 
