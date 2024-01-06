@@ -1,5 +1,6 @@
 package ru.netology.cardtocardservice.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.netology.cardtocardservice.dictionary.ComissionTransferDictionary;
 import ru.netology.cardtocardservice.domain.AccountTransaction;
@@ -15,10 +16,9 @@ import ru.netology.cardtocardservice.repository.TransferRepository;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
-import java.util.UUID;
-
 
 @Service
+@Slf4j
 public class TransferService {
     private final TransferRepository transferRepository;
 
@@ -44,16 +44,14 @@ public class TransferService {
                 if (isPositiveBalance(getAmount(transferData.getCardFromNumber(), accountRest), getTotalTransactionSum(transferData, transactions))) {
                     transferData.setTransactionRegistrationTime(new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(new Date()));
 
-                    //Создаем объект транзакции
-                    AccountTransaction transaction = new AccountTransaction(transferData);
-                    transaction.setOperationId(UUID.randomUUID().toString());
-                    transaction.setCommitCode(ConfirmType.UNKNOWN);
+                    String operationId = transferRepository.createTransaction(transferData);
+                    log.debug(String.format("Transaction {%s} was created. operationId = {%s} ", transferData, operationId));
 
-                    return transferRepository.createTransaction(transaction);
+                    return operationId;
                 } else {
-                    throw new NegativeAccountState(
-                            String.format("Account {%s} rest can become negative. Transaction can not be registered. Fill the balance and try it later", transferData.getCardFromNumber()),
-                            101);
+                    String msg = String.format("Account {%s} rest can become negative. Transaction can not be registered. Fill the balance and try it later", transferData.getCardFromNumber());
+                    log.error(msg);
+                    throw new NegativeAccountState(msg, 101);
                 }
             }
         }
@@ -61,56 +59,62 @@ public class TransferService {
 
 
     public String doComfirm(OperationInfo operationInfo) {
-
+        String msg = "";
         Map<String, AccountTransaction> transactions = transferRepository.getTransactions();
         Map<String, Integer> accountRest = transferRepository.getAccountRest();
 
         synchronized (transactions) {
             synchronized (accountRest) {
+
+                if (!transactions.containsKey(operationInfo.getOperationId())) {
+                    msg = String.format("Operation {%s} not exists in transaction table", operationInfo.getOperationId());
+                    log.error(msg);
+                    throw new OperationNotExist(msg, 103);
+                }
+
+                AccountTransaction transaction = transactions.get(operationInfo.getOperationId());
+
+                if (transaction.getCommitCode().equals(ConfirmType.COMMITED)) {
+                    msg = String.format("Transaction {%s} is already commited", operationInfo.getOperationId());
+                    log.error(msg);
+                    throw new OperationNotExist(msg, 104);
+                }
+                if (transaction.getCommitCode().equals(ConfirmType.ROLLBACK)) {
+                    msg = String.format("Transaction {%s} was already rollback", operationInfo.getOperationId());
+                    log.error(msg);
+                    throw new OperationNotExist(msg, 105);
+                }
+
                 switch (operationInfo.getCode().toUpperCase()) {
                     case "COMMIT":
-
-                        if (!transactions.containsKey(operationInfo.getOperationId())) {
-                            throw new OperationNotExist(String.format("Operation {%s} not exists in transaction table", operationInfo.getOperationId()), 103);
-                        }
-
-                        AccountTransaction transaction = transactions.get(operationInfo.getOperationId());
-
-                        if (transaction.getCommitCode().equals(ConfirmType.COMMITED)) {
-                            System.out.println(String.format("Transaction {%s} is already commited", operationInfo.getOperationId()));
-                            throw new OperationNotExist(String.format("Transaction {%s} is already commited", operationInfo.getOperationId()), 104);
-                        }
-                        if (transaction.getCommitCode().equals(ConfirmType.ROLLBACK)) {
-                            System.out.println(String.format("Transaction {%s} was rollback", operationInfo.getOperationId()));
-                            throw new OperationNotExist(String.format("Transaction {%s} was rollback", operationInfo.getOperationId()), 105);
-                        }
-
                         if (isPositiveBalance(getAmount(transaction.getCardFromNumber(), accountRest),
                                 transaction.getAmount().getValue() + transaction.getCommissionAmount())) {
-                            return transferRepository.commitTransaction(transaction);
+                            String operationId = transferRepository.commitTransaction(transaction);
+                            log.debug(String.format("Transaction {%s} is commited. Detail transaction: {%s}", operationId, transaction.toString()));
+                            return operationId;
 
                         } else {
-                            transferRepository.rollbackTransaction(operationInfo.getOperationId());
-                            throw new NegativeAccountState(String.format("The account PAN {%s} status may receive a negative balance, " +
-                                    "operation does not possible. The transaction was rejected (ROLLBACK)", transaction.getCardFromNumber()),
-                                    102);
+                            String operationId = transferRepository.rollbackTransaction(operationInfo.getOperationId());
+                            msg = String.format("The account PAN {%s} status may receive a negative balance, " +
+                                    "operation does not possible. The transaction was rejected (ROLLBACK)", transaction.getCardFromNumber());
+
+                            log.error(String.format("Transaction {%s} was rollback. Detail transaction: {%s} ", operationId, transaction) + msg);
+                            throw new NegativeAccountState(msg, 102);
                         }
 
                     case "ROLLBACK":
-
-                        if (!transactions.containsKey(operationInfo.getOperationId())) {
-                            System.out.println(String.format("Operation {%s} not exists in transaction table", operationInfo.getOperationId()));
-                            throw new OperationNotExist(String.format("Operation {%s} not exists in transaction table", operationInfo.getOperationId()), 103);
-                        }
-                        return transferRepository.rollbackTransaction(operationInfo.getOperationId());
+                        String operationId = transferRepository.rollbackTransaction(operationInfo.getOperationId());
+                        log.debug(String.format("Transaction {%s} was rollback. Detail transaction: {%s} ", operationId, transaction));
+                        return operationId;
 
                     default:
-                        throw new UnknownAccountAction(String.format("Unknown action {%s} for transaction processing", operationInfo.getCode()), 106);
+                        msg = String.format("Unknown action {%s} for transaction processing", operationInfo.getCode());
+                        log.error(msg);
+                        throw new UnknownAccountAction(msg, 106);
                 }
             }
         }
     }
-
 
     /**
      * Метод возвращает перспективу отстака по счету с учетом текущего перевода и необработанных транзакций  по счету Дебета
@@ -131,14 +135,23 @@ public class TransferService {
         Integer transferAmount = transferData.getAmount().getValue();
 
         //Итоговая пердрасчитанная сумма: текущий перевод + комиссия + сумма переводов и комиссий по всем необработанным транзакциям счета
-        Integer total = unknownTransactionSum + (transferAmount + transferData.getCommissionAmount());
-        return total;
-    }
+        Integer totalAmount = unknownTransactionSum + (transferAmount + transferData.getCommissionAmount());
 
+        log.debug(String.format("Total transactions with unknown status on debet account = {%s} " +
+                        "Transfer amount on debet account  = {%s} " +
+                        "Total amount on debet account = {%s} " +
+                        "Details: [%s]",
+                unknownTransactionSum,
+                transferAmount,
+                totalAmount,
+                transferData)
+        );
+        return totalAmount;
+    }
 
     /**
      * Метод возвращает общую сумму неподтвержденных транзакций по переданному номеру карты
-     * Общая сумма рассчитывается из суммы перевода и суммы комиссии
+     * Общая сумма рассчитывается из суммы перевода и суммы комиссии неподтвержденных транзакций
      *
      * @param account значение номера счета (карты)
      * @return сумма неподтвержденных транзакций

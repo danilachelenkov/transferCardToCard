@@ -14,10 +14,8 @@ import ru.netology.cardtocardservice.service.TransferService;
 
 import java.text.ParseException;
 
-//todo обеспечить логирование
-@Validated
-//https://www.bezkoder.com/spring-boot-validate-request-body/
 @Slf4j
+@Validated
 @RestController
 @RequestMapping("/")
 public class TransferControler {
@@ -30,12 +28,14 @@ public class TransferControler {
     @PostMapping("/transfer")
     public ResponseEntity<?> doTransfer(@Valid @RequestBody TransferInfo transferInfo) throws IllegalAccessException, ParseException {
         ValidationProcessor.validateTransferInfo(transferInfo);
+
         log.debug(transferInfo.toString());
         return new ResponseEntity<>(new TransactionInfo(transferService.doTransaction(transferInfo)), HttpStatus.OK);
     }
 
     @PostMapping("/confirmOperation")
     public ResponseEntity<?> commit(@Valid @RequestBody OperationInfo operationInfo) {
+
         log.debug(operationInfo.toString());
         return new ResponseEntity<>(new TransactionInfo(transferService.doComfirm(operationInfo)), HttpStatus.OK);
     }

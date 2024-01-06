@@ -6,6 +6,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import ru.netology.cardtocardservice.domain.ExceptionInfo;
+import ru.netology.cardtocardservice.exception.DateInvalidException;
+import ru.netology.cardtocardservice.exception.UnknownValidTypeException;
 
 
 @RestControllerAdvice
@@ -24,4 +26,15 @@ public class ValidationExceptionHandler {
         ExceptionInfo exceptionInfo = new ExceptionInfo(e.getAllErrors().get(0).getDefaultMessage(), 107);
         return new ResponseEntity<>(exceptionInfo, HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(DateInvalidException.class)
+    public ResponseEntity<?> responseEntityUnknownAccountAction(DateInvalidException e) {
+        return new ResponseEntity<>(new ExceptionInfo(e.getMessage(), e.getId()), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(UnknownValidTypeException.class)
+    public ResponseEntity<?> responseEntityRuntimeException(UnknownValidTypeException e) {
+        return new ResponseEntity<>(new ExceptionInfo(e.getMessage(), e.getId()), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
 }

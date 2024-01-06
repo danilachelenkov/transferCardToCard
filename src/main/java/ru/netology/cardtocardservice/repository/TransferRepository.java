@@ -1,13 +1,16 @@
 package ru.netology.cardtocardservice.repository;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import ru.netology.cardtocardservice.domain.AccountTransaction;
 import ru.netology.cardtocardservice.domain.ConfirmType;
+import ru.netology.cardtocardservice.domain.TransferInfo;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 
 /**
@@ -16,6 +19,7 @@ import java.util.Map;
  * История транзакций по счетам + состояния
  */
 @Repository
+@Slf4j
 public class TransferRepository {
     private final Map<String, Integer> accountRest = new HashMap<>();
     private final Map<String, AccountTransaction> transactions = new HashMap<>();
@@ -26,7 +30,7 @@ public class TransferRepository {
         this.accountRest.put("4548987854653311", 50);
 
         //добавим счет комиссии
-        this.accountRest.put("7470000000000001", 0);
+        this.accountRest.put("7060100000000001", 0);
     }
 
     public Map<String, Integer> getAccountRest() {
@@ -40,15 +44,20 @@ public class TransferRepository {
     /**
      * Метод создает свободную (без состояния) транзакцию в таблице проводок по переданному счету
      *
-     * @param transaction объект транзакции текущего перевода
+     * @param transferInfo объект испольняемого перевода
      * @return возвращает operationId идентификатор, под которым была сохранена транзакция в таблицу проводок
      */
-    public String createTransaction(AccountTransaction transaction) {
+    public String createTransaction(TransferInfo transferInfo) {
 
-        //Сохраняем в табилцу транзакций
+        //Создаем объект транзакции
+        AccountTransaction transaction = new AccountTransaction(transferInfo);
+        transaction.setOperationId(UUID.randomUUID().toString());
+        transaction.setCommitCode(ConfirmType.UNKNOWN);
+
+        //Сохраняем в таблицу транзакций
         transactions.put(transaction.getOperationId(), transaction);
 
-        System.out.println("Transaction " + transaction.getOperationId() + " is created");
+        log.debug("Transaction " + transaction.getOperationId() + " is created");
 
         return transaction.getOperationId();
     }
@@ -62,19 +71,31 @@ public class TransferRepository {
     public String commitTransaction(AccountTransaction transaction) {
         //Списываем комиссию, если она есть на счет комиссий
         if (transaction.getCommissionAmount() > 0) {
+            log.debug(String.format("Transfer has a commission ={%s}", transaction.getCommissionAmount()));
             doDebet(transaction.getCardFromNumber(), transaction.getCommissionAmount());
-            doCredit("7470000000000001", transaction.getCommissionAmount());
+            doCredit("7060100000000001", transaction.getCommissionAmount());
+
+            log.debug(String.format("Account PAN {%s} is debiting commission amount = {%s} and crediting account {7060100000000001}",
+                    transaction.getCardFromNumber(),
+                    transaction.getCommissionAmount()));
         }
 
-        //Списываем сумму перевода со счета по Дебету, пополняем этой же суммой счет по Кредиту на другой карте
+        //Списываем сумму перевода по счету Дебета, пополняем этой же суммой счет Кредита
         doDebet(transaction.getCardFromNumber(), transaction.getAmount().getValue());
         doCredit(transaction.getCardToNumber(), transaction.getAmount().getValue());
 
+        log.debug(String.format("Account PAN {%s} is debiting amount = {%s} and crediting amount {%s} to account {%s}",
+                transaction.getCardFromNumber(),
+                transaction.getAmount().getValue(),
+                transaction.getCardToNumber(),
+                transaction.getAmount().getValue()));
+
         //Подтверждаем транзакцию
         updateTransaction(transaction.getOperationId(), ConfirmType.COMMITED);
-        System.out.println(String.format("Transaction {%s} is commited", transaction.getOperationId()));
 
-        System.out.println(String.format("Card {%s} amount is {%s} and Card {%s} amount is {%s}",
+        log.debug(String.format("Transaction {%s} is committed", transaction.getOperationId()));
+
+        log.debug(String.format("Card (debet) {%s} amount is {%s} and Card (credit) {%s} amount is {%s}",
                 transaction.getCardFromNumber(),
                 accountRest.get(transaction.getCardFromNumber()),
                 transaction.getCardToNumber(),
@@ -91,7 +112,8 @@ public class TransferRepository {
      */
     public String rollbackTransaction(String operationId) {
         updateTransaction(operationId, ConfirmType.ROLLBACK);
-        System.out.println(String.format("Transaction {%s} is rejected", operationId));
+        log.debug(String.format("Transaction {%s} is rejected", operationId));
+
         return operationId;
     }
 

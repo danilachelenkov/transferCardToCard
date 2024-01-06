@@ -6,7 +6,6 @@ import ru.netology.cardtocardservice.domain.TransferInfo;
 import ru.netology.cardtocardservice.exception.DateInvalidException;
 import ru.netology.cardtocardservice.exception.UnknownValidTypeException;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

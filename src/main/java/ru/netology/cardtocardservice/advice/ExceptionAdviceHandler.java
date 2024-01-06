@@ -30,16 +30,6 @@ public class ExceptionAdviceHandler {
     public ResponseEntity<?> responseEntityUnknownAccountAction(UnknownAccountAction e) {
         return new ResponseEntity<>(new ExceptionInfo(e.getMessage(), e.getId()), HttpStatus.BAD_REQUEST);
     }
-    @ExceptionHandler(DateInvalidException.class)
-    public ResponseEntity<?> responseEntityUnknownAccountAction(DateInvalidException e) {
-        return new ResponseEntity<>(new ExceptionInfo(e.getMessage(), e.getId()), HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler(UnknownValidTypeException.class)
-    public ResponseEntity<?> responseEntityRuntimeException(UnknownValidTypeException e){
-        return new ResponseEntity<>(new ExceptionInfo(e.getMessage(),e.getId()),HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<?> responseEntityRuntimeException(RuntimeException e){
