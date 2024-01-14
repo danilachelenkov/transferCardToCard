@@ -18,15 +18,15 @@ import java.util.UUID;
  * Остатки по счетам
  * История транзакций по счетам + состояния
  */
-@Repository
 @Slf4j
-public class TransferRepository {
+@Repository
+public class TransferRepository implements Storagable {
     private final Map<String, Integer> accountRest = new HashMap<>();
     private final Map<String, AccountTransaction> transactions = new HashMap<>();
 
     public TransferRepository() {
         //для теста
-        this.accountRest.put("4548987854653322", 10000);
+        this.accountRest.put("4548987854653322", 10000000);
         this.accountRest.put("4548987854653311", 50);
 
         //добавим счет комиссии
@@ -76,19 +76,19 @@ public class TransferRepository {
             doCredit("7060100000000001", transaction.getCommissionAmount());
 
             log.debug(String.format("Account PAN {%s} is debiting commission amount = {%s} and crediting account {7060100000000001}",
-                    transaction.getCardFromNumber(),
-                    transaction.getCommissionAmount()));
+                    transaction.getCommissionAmount(),
+                    transaction.getCardFromNumber()));
         }
 
-        //Списываем сумму перевода по счету Дебета, пополняем этой же суммой счет Кредита
+        //Списываем сумму перевода со счета по Дебету, пополняем этой же суммой счет по Кредиту
         doDebet(transaction.getCardFromNumber(), transaction.getAmount().getValue());
         doCredit(transaction.getCardToNumber(), transaction.getAmount().getValue());
 
         log.debug(String.format("Account PAN {%s} is debiting amount = {%s} and crediting amount {%s} to account {%s}",
                 transaction.getCardFromNumber(),
                 transaction.getAmount().getValue(),
-                transaction.getCardToNumber(),
-                transaction.getAmount().getValue()));
+                transaction.getAmount().getValue(),
+                transaction.getCardToNumber()));
 
         //Подтверждаем транзакцию
         updateTransaction(transaction.getOperationId(), ConfirmType.COMMITED);
@@ -112,7 +112,7 @@ public class TransferRepository {
      */
     public String rollbackTransaction(String operationId) {
         updateTransaction(operationId, ConfirmType.ROLLBACK);
-        log.debug(String.format("Transaction {%s} is rejected", operationId));
+        log.debug(String.format("Transaction {%s} was rejected", operationId));
 
         return operationId;
     }
@@ -138,11 +138,9 @@ public class TransferRepository {
      * @param confirmType тип действия с транзакцией
      */
     private void updateTransaction(String operationID, ConfirmType confirmType) {
-        synchronized (transactions) {
-            AccountTransaction transaction = transactions.get(operationID);
-            transaction.setTransactionProcessedTime(new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(new Date()));
-            transaction.setCommitCode(confirmType);
-        }
+        AccountTransaction transaction = transactions.get(operationID);
+        transaction.setTransactionProcessedTime(new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(new Date()));
+        transaction.setCommitCode(confirmType);
     }
 
 

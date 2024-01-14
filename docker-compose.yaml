@@ -1,0 +1,13 @@
+version: '1'
+
+services:
+  serverTransferCard:
+    image: 'cardservice:1.0'
+    ports:
+      - '5500:5500'
+  client:
+    image: 'clientcardservice:1.0'
+    ports:
+      - '3000:3000'
+    depends_on:
+      - serverTransferCard

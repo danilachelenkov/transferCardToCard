@@ -37,7 +37,7 @@ public class TransferControler {
     public ResponseEntity<?> commit(@Valid @RequestBody OperationInfo operationInfo) {
 
         log.debug(operationInfo.toString());
-        return new ResponseEntity<>(new TransactionInfo(transferService.doComfirm(operationInfo)), HttpStatus.OK);
+        return new ResponseEntity<>(new TransactionInfo(transferService.doConfirm(operationInfo)), HttpStatus.OK);
     }
 
 }

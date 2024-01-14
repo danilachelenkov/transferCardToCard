@@ -23,18 +23,11 @@ public class ExceptionAdviceHandler {
 
     @ExceptionHandler(OperationNotExist.class)
     public ResponseEntity<?> responseEntityOperationNotExist(OperationNotExist e) {
-        return new ResponseEntity<>(new ExceptionInfo(e.getMessage(), e.getId()), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(new ExceptionInfo(e.getMessage(), e.getId()), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(UnknownAccountAction.class)
     public ResponseEntity<?> responseEntityUnknownAccountAction(UnknownAccountAction e) {
         return new ResponseEntity<>(new ExceptionInfo(e.getMessage(), e.getId()), HttpStatus.BAD_REQUEST);
     }
-
-    @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<?> responseEntityRuntimeException(RuntimeException e){
-        return new ResponseEntity<>(new ExceptionInfo(e.getMessage(),500),HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-
-
 }

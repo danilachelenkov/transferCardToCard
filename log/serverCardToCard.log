@@ -1,0 +1,569 @@
+2024-01-13 19:48:43 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 8728 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 19:48:43 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 19:48:43 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 19:48:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 19:48:44 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 19:48:44 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 19:48:44 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 19:48:44 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 748 ms
+2024-01-13 19:48:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 53827 (http) with context path ''
+2024-01-13 19:48:44 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.276 seconds (process running for 5.693)
+2024-01-13 19:48:46 [main] DEBUG r.n.c.controler.TransferControler - TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=956, cardToNumber=4548987854653311, amount=TransferAmount(value=100, currency=RUR), transactionRegistrationTime=null, commissionAmount=null)
+2024-01-13 19:48:46 [main] DEBUG r.n.c.controler.TransferControler - OperationInfo(operationId=1234567890, code=0000)
+2024-01-13 19:48:46 [main] ERROR r.n.c.service.TransferService - Debet account PAN {4548987854653311} not exists in rest table
+2024-01-13 19:48:46 [main] DEBUG r.n.c.service.TransferService - Transaction {54321} was rollback. Detail transaction: {AccountTransaction(commitCode=UNKNOWN, operationId=7777, transactionProcessedTime=null)} 
+2024-01-13 19:48:46 [main] DEBUG r.n.c.service.TransferService - Transaction {54321} is commited. Detail transaction: {AccountTransaction(commitCode=UNKNOWN, operationId=7777, transactionProcessedTime=null)}
+2024-01-13 20:03:46 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 21952 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:03:46 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:03:46 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:03:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:03:47 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:03:47 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:03:47 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:03:47 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 746 ms
+2024-01-13 20:03:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 54411 (http) with context path ''
+2024-01-13 20:03:47 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.25 seconds (process running for 5.772)
+2024-01-13 20:03:49 [main] DEBUG r.n.c.controler.TransferControler - TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=956, cardToNumber=4548987854653311, amount=TransferAmount(value=100, currency=RUR), transactionRegistrationTime=null, commissionAmount=null)
+2024-01-13 20:03:49 [main] DEBUG r.n.c.controler.TransferControler - OperationInfo(operationId=1234567890, code=0000)
+2024-01-13 20:03:49 [main] DEBUG r.n.c.service.TransferService - Total amount UNKNOWN transaction: 0 for account {4548987854653322}
+2024-01-13 20:03:49 [main] DEBUG r.n.c.service.TransferService - Total transactions with unknown status on debet account = {0} Transfer amount on debet account  = {100} Total amount on debet account = {101} Details: [TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=956, cardToNumber=4548987854653311, amount=TransferAmount(value=100, currency=RUR), transactionRegistrationTime=null, commissionAmount=1)]
+2024-01-13 20:03:49 [main] DEBUG r.n.c.service.TransferService - Transaction {TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=956, cardToNumber=4548987854653311, amount=TransferAmount(value=100, currency=RUR), transactionRegistrationTime=13.01.2024 20:03:49, commissionAmount=1)} was created. operationId = {11234567890} 
+2024-01-13 20:03:49 [main] DEBUG r.n.c.service.TransferService - Transaction {54321} was rollback. Detail transaction: {AccountTransaction(commitCode=UNKNOWN, operationId=7777, transactionProcessedTime=null)} 
+2024-01-13 20:03:49 [main] DEBUG r.n.c.service.TransferService - Transaction {54321} is commited. Detail transaction: {AccountTransaction(commitCode=UNKNOWN, operationId=7777, transactionProcessedTime=null)}
+2024-01-13 20:07:35 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 4324 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:07:35 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:07:35 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:07:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:07:36 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:07:36 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:07:36 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:07:36 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 751 ms
+2024-01-13 20:07:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 54556 (http) with context path ''
+2024-01-13 20:07:36 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.275 seconds (process running for 5.775)
+2024-01-13 20:08:10 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 20192 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:08:10 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:08:10 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:08:11 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:08:11 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:08:11 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:08:11 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:08:11 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 744 ms
+2024-01-13 20:08:11 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 54582 (http) with context path ''
+2024-01-13 20:08:11 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.285 seconds (process running for 5.796)
+2024-01-13 20:14:40 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 19164 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:14:40 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:14:40 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:14:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:14:41 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:14:41 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:14:41 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:14:41 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 812 ms
+2024-01-13 20:14:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 54757 (http) with context path ''
+2024-01-13 20:14:41 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.367 seconds (process running for 5.838)
+2024-01-13 20:15:02 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 21816 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:15:02 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:15:02 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:15:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:15:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:15:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:15:03 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:15:03 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 766 ms
+2024-01-13 20:15:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 54788 (http) with context path ''
+2024-01-13 20:15:04 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.372 seconds (process running for 5.956)
+2024-01-13 20:16:43 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 18812 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:16:43 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:16:43 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:16:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:16:44 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:16:44 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:16:44 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:16:44 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 766 ms
+2024-01-13 20:16:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 54856 (http) with context path ''
+2024-01-13 20:16:44 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.319 seconds (process running for 5.751)
+2024-01-13 20:17:20 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 21340 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:17:20 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:17:20 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:17:20 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:17:20 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:17:20 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:17:20 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:17:20 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 760 ms
+2024-01-13 20:17:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 54886 (http) with context path ''
+2024-01-13 20:17:21 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.274 seconds (process running for 5.704)
+2024-01-13 20:19:21 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 10836 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:19:21 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:19:21 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:19:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:19:22 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:19:22 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:19:22 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:19:22 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 799 ms
+2024-01-13 20:19:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 54958 (http) with context path ''
+2024-01-13 20:19:22 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.4 seconds (process running for 6.076)
+2024-01-13 20:22:27 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 22004 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:22:27 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:22:27 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:22:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:22:28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:22:28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:22:28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:22:28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 821 ms
+2024-01-13 20:22:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 55055 (http) with context path ''
+2024-01-13 20:22:28 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.41 seconds (process running for 6.042)
+2024-01-13 20:23:01 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 18216 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:23:01 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:23:01 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:23:02 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:23:02 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:23:02 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:23:02 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:23:02 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 791 ms
+2024-01-13 20:23:02 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 55091 (http) with context path ''
+2024-01-13 20:23:02 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.372 seconds (process running for 6.075)
+2024-01-13 20:23:37 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 20848 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:23:37 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:23:37 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:23:37 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:23:37 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:23:37 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:23:37 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:23:37 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 793 ms
+2024-01-13 20:23:38 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 55131 (http) with context path ''
+2024-01-13 20:23:38 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.365 seconds (process running for 6.095)
+2024-01-13 20:24:14 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 19192 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:24:14 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:24:14 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:24:15 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:24:15 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:24:15 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:24:15 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:24:15 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 812 ms
+2024-01-13 20:24:15 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 55160 (http) with context path ''
+2024-01-13 20:24:15 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.374 seconds (process running for 5.991)
+2024-01-13 20:25:47 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 21164 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:25:47 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:25:47 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:25:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:25:48 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:25:48 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:25:48 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:25:48 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 738 ms
+2024-01-13 20:25:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 55200 (http) with context path ''
+2024-01-13 20:25:48 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.264 seconds (process running for 5.716)
+2024-01-13 20:26:29 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 20596 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:26:29 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:26:29 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:26:30 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:26:30 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:26:30 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:26:30 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:26:30 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 767 ms
+2024-01-13 20:26:30 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 55261 (http) with context path ''
+2024-01-13 20:26:30 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.329 seconds (process running for 5.983)
+2024-01-13 20:27:03 [main] INFO  r.n.c.CardToCardServiceApplication - Starting CardToCardServiceApplication using Java 21 with PID 22012 (C:\Programming\Netology\Projects\_diplom\card-to-card-service\target\classes started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:27:03 [main] DEBUG r.n.c.CardToCardServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:27:03 [main] INFO  r.n.c.CardToCardServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:27:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2024-01-13 20:27:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:27:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:27:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:27:04 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 564 ms
+2024-01-13 20:27:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path ''
+2024-01-13 20:27:04 [main] INFO  r.n.c.CardToCardServiceApplication - Started CardToCardServiceApplication in 1.055 seconds (process running for 1.41)
+2024-01-13 20:27:12 [http-nio-5500-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-13 20:27:12 [http-nio-5500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-13 20:27:12 [http-nio-5500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-01-13 20:27:12 [http-nio-5500-exec-2] DEBUG r.n.c.controler.TransferControler - TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=null, commissionAmount=null)
+2024-01-13 20:27:12 [http-nio-5500-exec-2] DEBUG r.n.c.service.TransferService - Total amount UNKNOWN transaction: 0 for account {4548987854653322}
+2024-01-13 20:27:12 [http-nio-5500-exec-2] DEBUG r.n.c.service.TransferService - Total transactions with unknown status on debet account = {0} Transfer amount on debet account  = {500} Total amount on debet account = {505} Details: [TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=null, commissionAmount=5)]
+2024-01-13 20:27:12 [http-nio-5500-exec-2] DEBUG r.n.c.repository.TransferRepository - Transaction b4e40f99-4c01-4731-8415-30f56a604072 is created
+2024-01-13 20:27:12 [http-nio-5500-exec-2] DEBUG r.n.c.service.TransferService - Transaction {TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=13.01.2024 20:27:12, commissionAmount=5)} was created. operationId = {b4e40f99-4c01-4731-8415-30f56a604072} 
+2024-01-13 20:29:37 [main] INFO  r.n.c.CardToCardServiceApplication - Starting CardToCardServiceApplication using Java 21 with PID 8244 (C:\Programming\Netology\Projects\_diplom\card-to-card-service\target\classes started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:29:37 [main] DEBUG r.n.c.CardToCardServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:29:37 [main] INFO  r.n.c.CardToCardServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:29:38 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2024-01-13 20:29:38 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:29:38 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:29:38 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:29:38 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 585 ms
+2024-01-13 20:29:38 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path ''
+2024-01-13 20:29:38 [main] INFO  r.n.c.CardToCardServiceApplication - Started CardToCardServiceApplication in 1.129 seconds (process running for 1.535)
+2024-01-13 20:29:46 [http-nio-5500-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-13 20:29:46 [http-nio-5500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-13 20:29:46 [http-nio-5500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-01-13 20:33:53 [main] INFO  r.n.c.CardToCardServiceApplication - Starting CardToCardServiceApplication using Java 21 with PID 21696 (C:\Programming\Netology\Projects\_diplom\card-to-card-service\target\classes started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:33:53 [main] DEBUG r.n.c.CardToCardServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:33:53 [main] INFO  r.n.c.CardToCardServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:33:53 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2024-01-13 20:33:53 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:33:53 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:33:53 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:33:53 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 582 ms
+2024-01-13 20:33:53 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path ''
+2024-01-13 20:33:53 [main] INFO  r.n.c.CardToCardServiceApplication - Started CardToCardServiceApplication in 1.138 seconds (process running for 1.598)
+2024-01-13 20:33:59 [http-nio-5500-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-13 20:33:59 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-13 20:33:59 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-01-13 20:37:43 [main] INFO  r.n.c.CardToCardServiceApplication - Starting CardToCardServiceApplication using Java 21 with PID 15236 (C:\Programming\Netology\Projects\_diplom\card-to-card-service\target\classes started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:37:43 [main] DEBUG r.n.c.CardToCardServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:37:43 [main] INFO  r.n.c.CardToCardServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:37:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2024-01-13 20:37:44 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:37:44 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:37:44 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:37:44 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 551 ms
+2024-01-13 20:37:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path ''
+2024-01-13 20:37:44 [main] INFO  r.n.c.CardToCardServiceApplication - Started CardToCardServiceApplication in 1.044 seconds (process running for 1.4)
+2024-01-13 20:37:49 [http-nio-5500-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-13 20:37:49 [http-nio-5500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-13 20:37:49 [http-nio-5500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-01-13 20:38:08 [main] INFO  r.n.c.CardToCardServiceApplication - Starting CardToCardServiceApplication using Java 21 with PID 22308 (C:\Programming\Netology\Projects\_diplom\card-to-card-service\target\classes started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:38:08 [main] DEBUG r.n.c.CardToCardServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:38:08 [main] INFO  r.n.c.CardToCardServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:38:08 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2024-01-13 20:38:08 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:38:08 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:38:08 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:38:08 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 573 ms
+2024-01-13 20:38:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path ''
+2024-01-13 20:38:09 [main] INFO  r.n.c.CardToCardServiceApplication - Started CardToCardServiceApplication in 1.059 seconds (process running for 1.407)
+2024-01-13 20:38:15 [http-nio-5500-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-13 20:38:15 [http-nio-5500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-13 20:38:15 [http-nio-5500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-01-13 20:39:15 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 22524 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:39:15 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:39:15 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:39:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:39:16 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:39:16 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:39:16 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:39:16 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 833 ms
+2024-01-13 20:39:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 55741 (http) with context path ''
+2024-01-13 20:39:16 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.417 seconds (process running for 6.064)
+2024-01-13 20:40:11 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 7556 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:40:11 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:40:11 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:40:11 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:40:11 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:40:11 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:40:11 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:40:11 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 813 ms
+2024-01-13 20:40:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 55776 (http) with context path ''
+2024-01-13 20:40:12 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.403 seconds (process running for 6.202)
+2024-01-13 20:42:02 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 19604 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:42:02 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:42:02 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:42:02 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:42:02 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:42:02 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:42:02 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:42:02 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 821 ms
+2024-01-13 20:42:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 55832 (http) with context path ''
+2024-01-13 20:42:03 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.395 seconds (process running for 6.211)
+2024-01-13 20:42:16 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 5536 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:42:16 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:42:16 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:42:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:42:17 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:42:17 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:42:17 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:42:17 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 833 ms
+2024-01-13 20:42:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 55844 (http) with context path ''
+2024-01-13 20:42:17 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.384 seconds (process running for 6.108)
+2024-01-13 20:45:04 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 17452 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:45:04 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:45:04 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:45:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:45:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:45:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:45:05 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:45:05 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 793 ms
+2024-01-13 20:45:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 55922 (http) with context path ''
+2024-01-13 20:45:05 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.348 seconds (process running for 5.839)
+2024-01-13 20:45:26 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 21920 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:45:26 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:45:26 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:45:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:45:26 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:45:26 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:45:27 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:45:27 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 753 ms
+2024-01-13 20:45:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 55950 (http) with context path ''
+2024-01-13 20:45:27 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.304 seconds (process running for 5.773)
+2024-01-13 20:46:00 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 18812 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:46:00 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:46:00 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:46:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:46:01 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:46:01 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:46:01 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:46:01 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 781 ms
+2024-01-13 20:46:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 55977 (http) with context path ''
+2024-01-13 20:46:01 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.322 seconds (process running for 5.851)
+2024-01-13 20:46:08 [main] INFO  r.n.c.CardToCardServiceApplication - Starting CardToCardServiceApplication using Java 21 with PID 17684 (C:\Programming\Netology\Projects\_diplom\card-to-card-service\target\classes started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:46:08 [main] DEBUG r.n.c.CardToCardServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:46:08 [main] INFO  r.n.c.CardToCardServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:46:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2024-01-13 20:46:09 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:46:09 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:46:09 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:46:09 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 525 ms
+2024-01-13 20:46:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path ''
+2024-01-13 20:46:09 [main] INFO  r.n.c.CardToCardServiceApplication - Started CardToCardServiceApplication in 1.005 seconds (process running for 1.374)
+2024-01-13 20:46:15 [http-nio-5500-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-13 20:46:15 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-13 20:46:15 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-01-13 20:46:15 [http-nio-5500-exec-1] DEBUG r.n.c.controler.TransferControler - TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/22, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=null, commissionAmount=null)
+2024-01-13 20:46:15 [http-nio-5500-exec-1] DEBUG r.n.c.service.TransferService - Total amount UNKNOWN transaction: 0 for account {4548987854653322}
+2024-01-13 20:46:15 [http-nio-5500-exec-1] DEBUG r.n.c.service.TransferService - Total transactions with unknown status on debet account = {0} Transfer amount on debet account  = {500} Total amount on debet account = {505} Details: [TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/22, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=null, commissionAmount=5)]
+2024-01-13 20:46:15 [http-nio-5500-exec-1] DEBUG r.n.c.repository.TransferRepository - Transaction d5f1b212-83de-402c-afb7-e798c9464019 is created
+2024-01-13 20:46:15 [http-nio-5500-exec-1] DEBUG r.n.c.service.TransferService - Transaction {TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/22, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=13.01.2024 20:46:15, commissionAmount=5)} was created. operationId = {d5f1b212-83de-402c-afb7-e798c9464019} 
+2024-01-13 20:47:10 [main] INFO  r.n.c.CardToCardServiceApplication - Starting CardToCardServiceApplication using Java 21 with PID 17864 (C:\Programming\Netology\Projects\_diplom\card-to-card-service\target\classes started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:47:10 [main] DEBUG r.n.c.CardToCardServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:47:10 [main] INFO  r.n.c.CardToCardServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:47:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2024-01-13 20:47:10 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:47:10 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:47:10 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:47:10 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 567 ms
+2024-01-13 20:47:11 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path ''
+2024-01-13 20:47:11 [main] INFO  r.n.c.CardToCardServiceApplication - Started CardToCardServiceApplication in 1.06 seconds (process running for 1.402)
+2024-01-13 20:47:14 [http-nio-5500-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-13 20:47:14 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-13 20:47:14 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-01-13 20:47:32 [main] INFO  r.n.c.CardToCardServiceApplication - Starting CardToCardServiceApplication using Java 21 with PID 14756 (C:\Programming\Netology\Projects\_diplom\card-to-card-service\target\classes started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:47:32 [main] DEBUG r.n.c.CardToCardServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:47:32 [main] INFO  r.n.c.CardToCardServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:47:32 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2024-01-13 20:47:32 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:47:32 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:47:32 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:47:32 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 540 ms
+2024-01-13 20:47:32 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path ''
+2024-01-13 20:47:32 [main] INFO  r.n.c.CardToCardServiceApplication - Started CardToCardServiceApplication in 1.026 seconds (process running for 1.373)
+2024-01-13 20:47:34 [http-nio-5500-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-13 20:47:34 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-13 20:47:34 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-01-13 20:50:20 [main] INFO  r.n.c.CardToCardServiceApplication - Starting CardToCardServiceApplication using Java 21 with PID 21468 (C:\Programming\Netology\Projects\_diplom\card-to-card-service\target\classes started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:50:20 [main] DEBUG r.n.c.CardToCardServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:50:20 [main] INFO  r.n.c.CardToCardServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:50:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2024-01-13 20:50:21 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:50:21 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:50:21 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:50:21 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 546 ms
+2024-01-13 20:50:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path ''
+2024-01-13 20:50:21 [main] INFO  r.n.c.CardToCardServiceApplication - Started CardToCardServiceApplication in 1.026 seconds (process running for 1.377)
+2024-01-13 20:50:24 [http-nio-5500-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-13 20:50:24 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-13 20:50:24 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-01-13 20:50:36 [http-nio-5500-exec-3] DEBUG r.n.c.controler.TransferControler - TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/25, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=null, commissionAmount=null)
+2024-01-13 20:50:36 [http-nio-5500-exec-3] DEBUG r.n.c.service.TransferService - Total amount UNKNOWN transaction: 0 for account {4548987854653322}
+2024-01-13 20:50:36 [http-nio-5500-exec-3] DEBUG r.n.c.service.TransferService - Total transactions with unknown status on debet account = {0} Transfer amount on debet account  = {500} Total amount on debet account = {505} Details: [TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/25, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=null, commissionAmount=5)]
+2024-01-13 20:50:36 [http-nio-5500-exec-3] DEBUG r.n.c.repository.TransferRepository - Transaction c86d9b60-4616-4292-9088-394c10f4c5bb is created
+2024-01-13 20:50:36 [http-nio-5500-exec-3] DEBUG r.n.c.service.TransferService - Transaction {TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/25, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=13.01.2024 20:50:36, commissionAmount=5)} was created. operationId = {c86d9b60-4616-4292-9088-394c10f4c5bb} 
+2024-01-13 20:50:46 [http-nio-5500-exec-7] DEBUG r.n.c.controler.TransferControler - TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/25, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=null, commissionAmount=null)
+2024-01-13 20:50:46 [http-nio-5500-exec-7] DEBUG r.n.c.service.TransferService - Total amount UNKNOWN transaction: 505 for account {4548987854653322}
+2024-01-13 20:50:46 [http-nio-5500-exec-7] DEBUG r.n.c.service.TransferService - Total transactions with unknown status on debet account = {505} Transfer amount on debet account  = {500} Total amount on debet account = {1010} Details: [TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/25, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=null, commissionAmount=5)]
+2024-01-13 20:50:46 [http-nio-5500-exec-7] DEBUG r.n.c.repository.TransferRepository - Transaction ff875b06-7485-4de0-aaaa-49842ebf4f91 is created
+2024-01-13 20:50:46 [http-nio-5500-exec-7] DEBUG r.n.c.service.TransferService - Transaction {TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/25, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=13.01.2024 20:50:46, commissionAmount=5)} was created. operationId = {ff875b06-7485-4de0-aaaa-49842ebf4f91} 
+2024-01-13 20:56:21 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 21560 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 20:56:21 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 20:56:21 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 20:56:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 20:56:22 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 20:56:22 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 20:56:22 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 20:56:22 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 795 ms
+2024-01-13 20:56:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 56455 (http) with context path ''
+2024-01-13 20:56:22 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.341 seconds (process running for 5.984)
+2024-01-13 21:04:30 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 19800 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 21:04:30 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 21:04:30 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 21:04:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 21:04:31 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 21:04:31 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 21:04:31 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 21:04:31 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 754 ms
+2024-01-13 21:04:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 56682 (http) with context path ''
+2024-01-13 21:04:31 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.285 seconds (process running for 5.874)
+2024-01-13 21:09:09 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 17012 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 21:09:09 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 21:09:09 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 21:09:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 21:09:10 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 21:09:10 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 21:09:10 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 21:09:10 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 733 ms
+2024-01-13 21:09:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 56930 (http) with context path ''
+2024-01-13 21:09:10 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.27 seconds (process running for 5.741)
+2024-01-13 21:10:35 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 19888 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 21:10:35 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 21:10:35 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 21:10:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 21:10:36 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 21:10:36 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 21:10:36 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 21:10:36 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 748 ms
+2024-01-13 21:10:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 56968 (http) with context path ''
+2024-01-13 21:10:36 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.254 seconds (process running for 5.861)
+2024-01-13 21:10:37 [main] DEBUG r.n.c.controler.TransferControler - TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=956, cardToNumber=4548987854653311, amount=TransferAmount(value=100, currency=RUR), transactionRegistrationTime=null, commissionAmount=null)
+2024-01-13 21:10:38 [main] DEBUG r.n.c.controler.TransferControler - OperationInfo(operationId=1234567890, code=0000)
+2024-01-13 21:10:38 [main] DEBUG r.n.c.service.TransferService - Total amount UNKNOWN transaction: 0 for account {4548987854653322}
+2024-01-13 21:10:38 [main] DEBUG r.n.c.service.TransferService - Total transactions with unknown status on debet account = {0} Transfer amount on debet account  = {100} Total amount on debet account = {101} Details: [TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=956, cardToNumber=4548987854653311, amount=TransferAmount(value=100, currency=RUR), transactionRegistrationTime=null, commissionAmount=1)]
+2024-01-13 21:10:38 [main] DEBUG r.n.c.service.TransferService - Transaction {TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=956, cardToNumber=4548987854653311, amount=TransferAmount(value=100, currency=RUR), transactionRegistrationTime=13.01.2024 21:10:38, commissionAmount=1)} was created. operationId = {11234567890} 
+2024-01-13 21:10:38 [main] DEBUG r.n.c.service.TransferService - Transaction {54321} was rollback. Detail transaction: {AccountTransaction(commitCode=UNKNOWN, operationId=7777, transactionProcessedTime=null)} 
+2024-01-13 21:10:38 [main] DEBUG r.n.c.service.TransferService - Transaction {54321} is commited. Detail transaction: {AccountTransaction(commitCode=UNKNOWN, operationId=7777, transactionProcessedTime=null)}
+2024-01-13 21:11:04 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 17940 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 21:11:04 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 21:11:04 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 21:11:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 21:11:05 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 21:11:05 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 21:11:05 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 21:11:05 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 738 ms
+2024-01-13 21:11:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 56993 (http) with context path ''
+2024-01-13 21:11:05 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.253 seconds (process running for 5.764)
+2024-01-13 21:11:07 [main] DEBUG r.n.c.controler.TransferControler - TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=956, cardToNumber=4548987854653311, amount=TransferAmount(value=100, currency=RUR), transactionRegistrationTime=null, commissionAmount=null)
+2024-01-13 21:11:07 [main] DEBUG r.n.c.controler.TransferControler - OperationInfo(operationId=1234567890, code=0000)
+2024-01-13 21:11:07 [main] DEBUG r.n.c.service.TransferService - Total amount UNKNOWN transaction: 0 for account {4548987854653322}
+2024-01-13 21:11:07 [main] DEBUG r.n.c.service.TransferService - Total transactions with unknown status on debet account = {0} Transfer amount on debet account  = {100} Total amount on debet account = {101} Details: [TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=956, cardToNumber=4548987854653311, amount=TransferAmount(value=100, currency=RUR), transactionRegistrationTime=null, commissionAmount=1)]
+2024-01-13 21:11:07 [main] DEBUG r.n.c.service.TransferService - Transaction {TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=956, cardToNumber=4548987854653311, amount=TransferAmount(value=100, currency=RUR), transactionRegistrationTime=13.01.2024 21:11:07, commissionAmount=1)} was created. operationId = {11234567890} 
+2024-01-13 21:11:07 [main] DEBUG r.n.c.service.TransferService - Transaction {54321} was rollback. Detail transaction: {AccountTransaction(commitCode=UNKNOWN, operationId=7777, transactionProcessedTime=null)} 
+2024-01-13 21:11:07 [main] DEBUG r.n.c.service.TransferService - Transaction {54321} is commited. Detail transaction: {AccountTransaction(commitCode=UNKNOWN, operationId=7777, transactionProcessedTime=null)}
+2024-01-13 21:12:25 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 8508 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 21:12:25 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 21:12:25 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 21:12:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 21:12:25 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 21:12:25 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 21:12:25 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 21:12:25 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 750 ms
+2024-01-13 21:12:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 57044 (http) with context path ''
+2024-01-13 21:12:26 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.264 seconds (process running for 5.841)
+2024-01-13 21:12:27 [main] DEBUG r.n.c.controler.TransferControler - TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=956, cardToNumber=4548987854653311, amount=TransferAmount(value=100, currency=RUR), transactionRegistrationTime=null, commissionAmount=null)
+2024-01-13 21:12:27 [main] DEBUG r.n.c.controler.TransferControler - OperationInfo(operationId=1234567890, code=0000)
+2024-01-13 21:12:27 [main] DEBUG r.n.c.service.TransferService - Total amount UNKNOWN transaction: 0 for account {4548987854653322}
+2024-01-13 21:12:27 [main] DEBUG r.n.c.service.TransferService - Total transactions with unknown status on debet account = {0} Transfer amount on debet account  = {100} Total amount on debet account = {101} Details: [TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=956, cardToNumber=4548987854653311, amount=TransferAmount(value=100, currency=RUR), transactionRegistrationTime=null, commissionAmount=1)]
+2024-01-13 21:12:27 [main] DEBUG r.n.c.service.TransferService - Transaction {TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/24, cardFromCVV=956, cardToNumber=4548987854653311, amount=TransferAmount(value=100, currency=RUR), transactionRegistrationTime=13.01.2024 21:12:27, commissionAmount=1)} was created. operationId = {11234567890} 
+2024-01-13 21:12:27 [main] DEBUG r.n.c.service.TransferService - Transaction {54321} was rollback. Detail transaction: {AccountTransaction(commitCode=UNKNOWN, operationId=7777, transactionProcessedTime=null)} 
+2024-01-13 21:12:27 [main] DEBUG r.n.c.service.TransferService - Transaction {54321} is commited. Detail transaction: {AccountTransaction(commitCode=UNKNOWN, operationId=7777, transactionProcessedTime=null)}
+2024-01-13 21:13:55 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 6032 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 21:13:55 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 21:13:55 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 21:13:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 21:13:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 21:13:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 21:13:55 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 21:13:55 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 729 ms
+2024-01-13 21:13:56 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 57091 (http) with context path ''
+2024-01-13 21:13:56 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.253 seconds (process running for 5.898)
+2024-01-13 21:15:29 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 18480 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 21:15:29 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 21:15:29 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 21:15:29 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 21:15:29 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 21:15:29 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 21:15:29 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 21:15:29 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 824 ms
+2024-01-13 21:15:30 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 57123 (http) with context path ''
+2024-01-13 21:15:30 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.422 seconds (process running for 6.18)
+2024-01-13 21:17:06 [main] INFO  r.n.c.CardToCardServiceApplication - Starting CardToCardServiceApplication using Java 21 with PID 10680 (C:\Programming\Netology\Projects\_diplom\card-to-card-service\target\classes started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 21:17:06 [main] DEBUG r.n.c.CardToCardServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 21:17:06 [main] INFO  r.n.c.CardToCardServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 21:17:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2024-01-13 21:17:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 21:17:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 21:17:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 21:17:06 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 599 ms
+2024-01-13 21:17:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path ''
+2024-01-13 21:17:06 [main] INFO  r.n.c.CardToCardServiceApplication - Started CardToCardServiceApplication in 1.197 seconds (process running for 1.669)
+2024-01-13 21:17:24 [http-nio-5500-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-13 21:17:24 [http-nio-5500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-13 21:17:24 [http-nio-5500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-01-13 21:17:24 [http-nio-5500-exec-2] DEBUG r.n.c.controler.TransferControler - TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/25, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=null, commissionAmount=null)
+2024-01-13 21:17:24 [http-nio-5500-exec-2] DEBUG r.n.c.service.TransferService - Total amount UNKNOWN transaction: 0 for account {4548987854653322}
+2024-01-13 21:17:24 [http-nio-5500-exec-2] DEBUG r.n.c.service.TransferService - Total transactions with unknown status on debet account = {0} Transfer amount on debet account  = {500} Total amount on debet account = {505} Details: [TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/25, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=null, commissionAmount=5)]
+2024-01-13 21:17:24 [http-nio-5500-exec-2] DEBUG r.n.c.repository.TransferRepository - Transaction fb22b3d1-df73-4187-b5e3-8fa36d474379 is created
+2024-01-13 21:17:24 [http-nio-5500-exec-2] DEBUG r.n.c.service.TransferService - Transaction {TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/25, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=13.01.2024 21:17:24, commissionAmount=5)} was created. operationId = {fb22b3d1-df73-4187-b5e3-8fa36d474379} 
+2024-01-13 21:18:00 [main] INFO  r.n.c.CardToCardServiceApplication - Starting CardToCardServiceApplication using Java 21 with PID 12448 (C:\Programming\Netology\Projects\_diplom\card-to-card-service\target\classes started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 21:18:00 [main] DEBUG r.n.c.CardToCardServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 21:18:00 [main] INFO  r.n.c.CardToCardServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 21:18:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2024-01-13 21:18:01 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 21:18:01 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 21:18:01 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 21:18:01 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 590 ms
+2024-01-13 21:18:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path ''
+2024-01-13 21:18:01 [main] INFO  r.n.c.CardToCardServiceApplication - Started CardToCardServiceApplication in 1.127 seconds (process running for 1.602)
+2024-01-13 21:18:02 [http-nio-5500-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-13 21:18:02 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-13 21:18:02 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-01-13 21:18:10 [http-nio-5500-exec-1] DEBUG r.n.c.controler.TransferControler - OperationInfo(operationId=fb22b3d1-df73-4187-b5e3-8fa36d474379, code=0001)
+2024-01-13 21:18:11 [http-nio-5500-exec-1] ERROR r.n.c.service.TransferService - Operation {fb22b3d1-df73-4187-b5e3-8fa36d474379} not exists in transaction table
+2024-01-13 21:19:10 [main] INFO  r.n.c.CardToCardServiceApplication - Starting CardToCardServiceApplication using Java 21 with PID 10092 (C:\Programming\Netology\Projects\_diplom\card-to-card-service\target\classes started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 21:19:10 [main] DEBUG r.n.c.CardToCardServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 21:19:10 [main] INFO  r.n.c.CardToCardServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 21:19:11 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2024-01-13 21:19:11 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 21:19:11 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 21:19:11 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 21:19:11 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 575 ms
+2024-01-13 21:19:11 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path ''
+2024-01-13 21:19:11 [main] INFO  r.n.c.CardToCardServiceApplication - Started CardToCardServiceApplication in 1.129 seconds (process running for 1.593)
+2024-01-13 21:19:15 [http-nio-5500-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-13 21:19:15 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-13 21:19:15 [http-nio-5500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-01-13 21:19:15 [http-nio-5500-exec-1] DEBUG r.n.c.controler.TransferControler - OperationInfo(operationId=fb22b3d1-df73-4187-b5e3-8fa36d474379, code=0001)
+2024-01-13 21:19:22 [http-nio-5500-exec-1] ERROR r.n.c.service.TransferService - Operation {fb22b3d1-df73-4187-b5e3-8fa36d474379} not exists in transaction table
+2024-01-13 21:19:30 [main] INFO  r.n.c.CardToCardServiceApplication - Starting CardToCardServiceApplication using Java 21 with PID 19136 (C:\Programming\Netology\Projects\_diplom\card-to-card-service\target\classes started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 21:19:30 [main] DEBUG r.n.c.CardToCardServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 21:19:30 [main] INFO  r.n.c.CardToCardServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 21:19:30 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5500 (http)
+2024-01-13 21:19:31 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 21:19:31 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 21:19:31 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 21:19:31 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 581 ms
+2024-01-13 21:19:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5500 (http) with context path ''
+2024-01-13 21:19:31 [main] INFO  r.n.c.CardToCardServiceApplication - Started CardToCardServiceApplication in 1.134 seconds (process running for 1.59)
+2024-01-13 21:19:36 [http-nio-5500-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-13 21:19:36 [http-nio-5500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-13 21:19:36 [http-nio-5500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-01-13 21:19:36 [http-nio-5500-exec-2] DEBUG r.n.c.controler.TransferControler - TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/25, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=null, commissionAmount=null)
+2024-01-13 21:19:36 [http-nio-5500-exec-2] DEBUG r.n.c.service.TransferService - Total amount UNKNOWN transaction: 0 for account {4548987854653322}
+2024-01-13 21:19:36 [http-nio-5500-exec-2] DEBUG r.n.c.service.TransferService - Total transactions with unknown status on debet account = {0} Transfer amount on debet account  = {500} Total amount on debet account = {505} Details: [TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/25, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=null, commissionAmount=5)]
+2024-01-13 21:19:36 [http-nio-5500-exec-2] DEBUG r.n.c.repository.TransferRepository - Transaction 468f149c-1782-4a9e-90df-5d4fb2aef91f is created
+2024-01-13 21:19:36 [http-nio-5500-exec-2] DEBUG r.n.c.service.TransferService - Transaction {TransferInfo(cardFromNumber=4548987854653322, cardFromValidTill=08/25, cardFromCVV=581, cardToNumber=4548987854653311, amount=TransferAmount(value=500, currency=RUR), transactionRegistrationTime=13.01.2024 21:19:36, commissionAmount=5)} was created. operationId = {468f149c-1782-4a9e-90df-5d4fb2aef91f} 
+2024-01-13 21:19:48 [http-nio-5500-exec-3] DEBUG r.n.c.controler.TransferControler - OperationInfo(operationId=468f149c-1782-4a9e-90df-5d4fb2aef91f, code=0001)
+2024-01-13 21:20:05 [http-nio-5500-exec-3] DEBUG r.n.c.repository.TransferRepository - Transaction {468f149c-1782-4a9e-90df-5d4fb2aef91f} was rejected
+2024-01-13 21:20:10 [http-nio-5500-exec-3] DEBUG r.n.c.service.TransferService - Transaction {468f149c-1782-4a9e-90df-5d4fb2aef91f} was rollback. Detail transaction: {AccountTransaction(commitCode=ROLLBACK, operationId=468f149c-1782-4a9e-90df-5d4fb2aef91f, transactionProcessedTime=13.01.2024 21:20:05)} 
+2024-01-13 21:22:40 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 20192 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 21:22:40 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 21:22:40 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 21:22:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 21:22:41 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 21:22:41 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 21:22:41 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 21:22:41 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 758 ms
+2024-01-13 21:22:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 57398 (http) with context path ''
+2024-01-13 21:22:41 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.29 seconds (process running for 5.779)
+2024-01-13 21:23:17 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 19192 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 21:23:17 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 21:23:17 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 21:23:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 21:23:17 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 21:23:17 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 21:23:18 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 21:23:18 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 816 ms
+2024-01-13 21:23:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 57428 (http) with context path ''
+2024-01-13 21:23:18 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.388 seconds (process running for 6.052)
+2024-01-13 21:24:42 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Starting CardToCardServiceApplicationTests using Java 21 with PID 20800 (started by GPB in C:\Programming\Netology\Projects\_diplom\card-to-card-service)
+2024-01-13 21:24:42 [main] DEBUG r.n.c.CardToCardServiceApplicationTests - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-13 21:24:42 [main] INFO  r.n.c.CardToCardServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-01-13 21:24:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2024-01-13 21:24:43 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-13 21:24:43 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13 21:24:43 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-13 21:24:43 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 833 ms
+2024-01-13 21:24:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 57527 (http) with context path ''
+2024-01-13 21:24:43 [main] INFO  r.n.c.CardToCardServiceApplicationTests - Started CardToCardServiceApplicationTests in 1.409 seconds (process running for 6.486)

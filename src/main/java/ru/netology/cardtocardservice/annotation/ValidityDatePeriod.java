@@ -7,7 +7,6 @@ import java.lang.annotation.*;
 @Documented
 public @interface ValidityDatePeriod {
     String message();
-
     DateValidType typeValid();
 }
 

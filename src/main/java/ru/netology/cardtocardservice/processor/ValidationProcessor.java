@@ -35,7 +35,12 @@ public class ValidationProcessor {
         field.setAccessible(true);
 
         String name = (String) field.get(transferInfo);
-        String dateCard = "01." + name.substring(0, 2) + ".20" + name.substring(2);
+        String[] arrStr = name.split("/");
+
+        field.setAccessible(false);
+
+        //String dateCard = "01." + name.substring(0, 2) + ".20" + name.substring(2);
+        String dateCard = "01." + arrStr[0] + ".20" + arrStr[1];
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
 
         Date convertedDate = dateFormat.parse(dateCard);
@@ -48,6 +53,6 @@ public class ValidationProcessor {
             throw new DateInvalidException(message, 110);
         }
 
-        field.setAccessible(false);
+
     }
 }
